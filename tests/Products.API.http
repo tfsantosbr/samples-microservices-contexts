@@ -1,0 +1,31 @@
+@hostUrl = http://localhost:6000
+
+### Health check
+GET {{hostUrl}}/health
+
+### Open Api Json
+GET {{hostUrl}}/openapi/v1.json
+Accept: application/json
+
+### Get all categories
+GET {{hostUrl}}/products/categories
+Accept: application/json
+
+### Get all products
+GET {{hostUrl}}/products
+Accept: application/json
+
+### Get product by id
+GET {{hostUrl}}/products/1
+Accept: application/json
+
+### Create new product
+POST {{hostUrl}}/products
+Content-Type: application/json
+
+### Update product
+PUT {{hostUrl}}/products/1
+Content-Type: application/json
+
+### Delete product
+DELETE {{hostUrl}}/products/1

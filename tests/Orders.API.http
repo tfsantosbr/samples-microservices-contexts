@@ -1,0 +1,29 @@
+@hostUrl = http://localhost:5000
+
+### Health check
+GET {{hostUrl}}/health
+Accept: application/json
+
+### Open Api Json
+GET {{hostUrl}}/openapi/v1.json
+Accept: application/json
+
+### Get all orders
+GET {{hostUrl}}/orders
+Accept: application/json
+
+### Get order by id
+GET {{hostUrl}}/orders/1
+Accept: application/json
+
+### Create new order
+POST {{hostUrl}}/orders
+Content-Type: application/json
+
+### Update order
+PUT {{hostUrl}}/orders/1
+Content-Type: application/json
+
+### Delete order
+DELETE {{hostUrl}}/orders/1
+Accept: application/json

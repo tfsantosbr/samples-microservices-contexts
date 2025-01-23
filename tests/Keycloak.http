@@ -1,0 +1,11 @@
+@host = localhost:7000
+@realm = eventflix
+@cliendId = gateway-api
+@username = customer@email.com
+@password = 123456
+
+### Login no Keycloak
+POST http://{{host}}/realms/{{realm}}/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&client_id={{cliendId}}&username={{username}}&password={{password}}
