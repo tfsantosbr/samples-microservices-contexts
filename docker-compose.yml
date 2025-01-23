@@ -6,7 +6,7 @@ services:
       context: ./src/Orders.API
       dockerfile: Dockerfile
     ports:
-      - "5000:8080"
+      - "5100:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     networks:
@@ -17,18 +17,7 @@ services:
       context: ./src/Products.API
       dockerfile: Dockerfile
     ports:
-      - "6000:8080"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    networks:
-      - api-gateway-net
-
-  billing-api:
-    build:
-      context: ./src/Billing.API
-      dockerfile: Dockerfile
-    ports:
-      - "5003:80"
+      - "5200:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     networks:
