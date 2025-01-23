@@ -1,0 +1,29 @@
+@hostUrl = http://localhost:5400
+
+### Health check
+GET {{hostUrl}}/health
+Accept: application/json
+
+### Open Api Json
+GET {{hostUrl}}/openapi/v1.json
+Accept: application/json
+
+### Get all payments
+GET {{hostUrl}}/payments
+Accept: application/json
+
+### Get payment by id
+GET {{hostUrl}}/payments/1
+Accept: application/json
+
+### Create new payment
+POST {{hostUrl}}/payments
+Content-Type: application/json
+
+### Update payment
+PUT {{hostUrl}}/payments/1
+Content-Type: application/json
+
+### Delete payment
+DELETE {{hostUrl}}/payments/1
+Accept: application/json

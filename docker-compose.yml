@@ -23,6 +23,28 @@ services:
     networks:
       - api-gateway-net
 
+  billing-api:
+    build:
+      context: ./src/Billing.API
+      dockerfile: Dockerfile
+    ports:
+      - "5300:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - api-gateway-net
+
+  payments-api:
+    build:
+      context: ./src/Payments.API
+      dockerfile: Dockerfile
+    ports:
+      - "5400:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - api-gateway-net
+
   keycloak:
     image: quay.io/keycloak/keycloak
     environment:
@@ -33,27 +55,10 @@ services:
     volumes:
       - ./config/keycloak/realm.json:/opt/keycloak/data/import/realm-export.json:ro
     ports:
-      - "7000:8080"
+      - "8080:8080"
     command:
       - start-dev
       - --import-realm
-    networks:
-      - api-gateway-net
-
-  # API GATEWAY
-
-  gateway-api:
-    build:
-      context: ./src/Gateway.API
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    depends_on:
-      - orders-api
-      - products-api
-      - keycloak
     networks:
       - api-gateway-net
 

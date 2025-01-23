@@ -1,11 +1,5 @@
 # sample-microservices-contexts
 
-- Customer
-
-  - Contracts
-  - Users
-  - Autentication
-
 - Orders
 
   - Orders
